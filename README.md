@@ -1,19 +1,17 @@
 # Micro-Maker: Market-Making Simulator
 
 ## Overview
-**Micro-Maker** is a market-making simulator designed to demonstrate both **real-time trading logic** and **performance-aware programming**.  
-It includes a Python-based tick generator and backtester, with an optional C++ implementation for high-performance simulation.
-
-This project is ideal for demonstrating skills relevant to **quantitative trading** and **software engineering internships**.
+**Micro-Maker** is a market-making simulator that demonstrates real-time trading logic, strategy backtesting, and optional high-performance simulation.  
+It is designed to showcase both **Python-driven prototyping** and **systems-level C++ programming**, making it a strong portfolio piece for quantitative trading or software engineering roles.
 
 ---
 
 ## Features
 - Python tick generator simulates top-of-book bid/ask ticks.
 - Python backtesting framework evaluates strategy performance and logs orders.
-- Optional C++ tick generator & ring buffer for low-latency, high-throughput simulation.
-- Modular and well-organized code structure for easy extension.
-- CSV outputs for analysis and visualization.
+- Optional C++ tick generator & lock-free ring buffer for low-latency simulation.
+- Modular code structure for easy extension and testing.
+- CSV outputs for further analysis and visualization.
 
 ---
 
@@ -22,16 +20,16 @@ This project is ideal for demonstrating skills relevant to **quantitative tradin
 micro-maker/
 ├── README.md
 ├── src/
-│ ├── python/ # main runnable scripts
+│ ├── python/ # Main runnable Python scripts
 │ │ ├── tick_generator.py
 │ │ └── backtest.py
-│ └── cpp/ # optional high-performance demo
+│ └── cpp/ # Optional high-performance C++ demo
 │ ├── main.cpp
 │ ├── ring_buffer.h
 │ └── types.h
-├── data/ # sample input CSVs
-├── results/ # output plots / CSVs
-├── tests/ # optional unit tests
+├── data/ # Sample input CSVs
+├── results/ # Output plots / CSVs
+├── tests/ # Optional unit tests
 ├── requirements.txt # Python dependencies
 └── .gitignore
 
@@ -53,11 +51,13 @@ Run the Backtester
 bash
 Copy code
 python src/python/backtest.py
+The backtester reads simulated ticks and logs orders to results/ for analysis.
 
 Optional C++ Demo
-
 Compile and run the high-performance version:
 
+bash
+Copy code
 cd src/cpp/
 g++ main.cpp -o micro_maker
 ./micro_maker 127.0.0.1 9000
