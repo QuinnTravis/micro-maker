@@ -53,3 +53,11 @@ Run the Backtester
 bash
 Copy code
 python src/python/backtest.py
+
+Optional C++ Demo
+
+Compile and run the high-performance version:
+
+cd src/cpp/
+g++ main.cpp -o micro_maker
+./micro_maker 127.0.0.1 9000
